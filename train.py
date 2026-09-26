@@ -1,30 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""CFDGN QUERY-VALUE MULTI-INTEREST + DECOUPLED SCALE-INVARIANT training entry.
 
-MultiCBR remains unchanged on its official path.  CFDGN uses one score
-from training through deployment:
-
-    Main BPR + original CL
-        -> MultiCBR collaborative backbone only
-
-    Decoupled structural ranking on the official repository pair
-    + scale-invariant deploy calibration
-    + TRAIN-derived PPMI relation objective
-    + fixed-anchor PCL + Orth
-        -> detached CFDGN correction branch
-
-    s_final(u,b) = s_main(u,b) + alpha * sigma_Main * r_raw(u,b)
-    alpha in [0, alpha_max], r_raw in [-1,1]
-
-The former co-user percentile role-affinity target is diagnostic only and has
-zero optimization weight.  There is no Main-hard unseen relabeling, Top-M
-reranking, candidate z-score, lambda grid, confidence gate, or post-hoc fusion.
-
-CFDGN checkpoint selection uses the complete Final Validation metrics
-jointly at @20 and @40. Test remains sealed and is evaluated exactly once after
-the selected checkpoint is frozen. MultiCBR's official branch is byte-preserved.
-"""
 
 import os
 import shutil
