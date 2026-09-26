@@ -1,0 +1,261 @@
+# CFDGN UNIFIED-FINAL-SCORE config.
+# Dataset-specific MultiCBR backbone settings and established PCL/Orth weights are preserved.
+# New CFDGN semantic-identifiability constants are common across all datasets.
+# No dataset-specific structural architecture branch is introduced.
+NetEase:
+  data_path: ./datasets
+  batch_size_train: 2048
+  batch_size_test: 2048
+  topk:
+  - 10
+  - 20
+  - 40
+  - 80
+  neg_num: 1
+  aug_type: Noise
+  ed_interval: 1
+  embedding_sizes:
+  - 128
+  num_layerss:
+  - 2
+  UB_ratios:
+  - 0.0
+  UI_ratios:
+  - 0.0
+  BI_ratios:
+  - 0.2
+  fusion_weights:
+    modal_weight:
+    - 0.5
+    - 0.2
+    - 0.3
+    UB_layer:
+    - 0.35
+    - 0.15
+    - 0.5
+    UI_layer:
+    - 0.25
+    - 0.65
+    - 0.1
+    BI_layer:
+    - 0.4
+    - 0.4
+    - 0.2
+  lrs:
+  - 0.001
+  l2_regs:
+  - 1.0e-05
+  c_lambdas:
+  - 0.05
+  c_temps:
+  - 0.2
+  epochs: 50
+  test_interval: 5
+  gfr_num_facets: 4
+  gfr_facet_dim: 64
+  gfr_history_tau: 0.5
+  gfr_match_tau: 0.5
+  gfr_pcl_tau: 0.2
+  gfr_pcl_label_smoothing: 0.05
+  gfr_lambda_pcl_item: 0.001
+  gfr_lambda_pcl_bundle: 0.001
+  gfr_lambda_pcl_user: 0.001
+  gfr_lambda_orth_item: 0.001
+  gfr_lambda_orth_bundle: 0.001
+  gfr_lambda_orth_user: 0.001
+  gfr_ppmi_topk: 20
+  gfr_ppmi_min_count: 2
+  gfr_anchor_seed: 12345
+  gfr_role_tau: 0.5
+  gfr_type_tau: 0.25
+  gfr_ppmi_enrich_weight: 0.1
+  gfr_ppmi_enrich_tau: 0.5
+  gfr_relation_dim: 64
+  gfr_relation_bank_size: 65536
+  gfr_relation_batch_size: 2048
+  gfr_relation_bank_seed: 314159
+  gfr_lambda_residual: 0.1
+  gfr_residual_scale_init: 0.1
+  gfr_residual_scale_max: 0.5
+  gfr_struct_hard_k: 0
+  gfr_eval_bundle_chunk: 512
+  gfr_lambda_relation: 0.05
+  gfr_role_prior_weight: 0.2
+  gfr_role_goal_weight: 0.45
+  gfr_role_context_weight: 0.2
+  gfr_role_ppmi_weight: 0.15
+  gfr_relation_role_residual_weight: 0.0
+  gfr_lambda_role_diversity: 0.0
+  gfr_lambda_role_semantic: 0.0
+  gfr_main_error_weight_floor: 0.1
+iFashion:
+  data_path: ./datasets
+  batch_size_train: 2048
+  batch_size_test: 2048
+  topk:
+  - 10
+  - 20
+  - 40
+  - 80
+  neg_num: 1
+  aug_type: Noise
+  ed_interval: 1
+  embedding_sizes:
+  - 128
+  num_layerss:
+  - 2
+  UB_ratios:
+  - 0.05
+  UI_ratios:
+  - 0.0
+  BI_ratios:
+  - 0.15
+  fusion_weights:
+    modal_weight:
+    - 0.1
+    - 0.2
+    - 0.7
+    UB_layer:
+    - 0.5
+    - 0.5
+    - 0.0
+    UI_layer:
+    - 0.3
+    - 0.2
+    - 0.5
+    BI_layer:
+    - 0.5
+    - 0.5
+    - 0.0
+  lrs:
+  - 0.001
+  l2_regs:
+  - 1.0e-05
+  c_lambdas:
+  - 0.1
+  c_temps:
+  - 0.2
+  epochs: 50
+  test_interval: 5
+  gfr_num_facets: 4
+  gfr_facet_dim: 64
+  gfr_history_tau: 0.5
+  gfr_match_tau: 0.5
+  gfr_pcl_tau: 0.2
+  gfr_pcl_label_smoothing: 0.05
+  gfr_lambda_pcl_item: 0.001
+  gfr_lambda_pcl_bundle: 0.001
+  gfr_lambda_pcl_user: 0.001
+  gfr_lambda_orth_item: 0.001
+  gfr_lambda_orth_bundle: 0.001
+  gfr_lambda_orth_user: 0.001
+  gfr_ppmi_topk: 20
+  gfr_ppmi_min_count: 2
+  gfr_anchor_seed: 12345
+  gfr_role_tau: 0.5
+  gfr_type_tau: 0.25
+  gfr_ppmi_enrich_weight: 0.1
+  gfr_ppmi_enrich_tau: 0.5
+  gfr_relation_dim: 64
+  gfr_relation_bank_size: 65536
+  gfr_relation_batch_size: 2048
+  gfr_relation_bank_seed: 314159
+  gfr_lambda_residual: 0.1
+  gfr_residual_scale_init: 0.1
+  gfr_residual_scale_max: 0.5
+  gfr_struct_hard_k: 0
+  gfr_eval_bundle_chunk: 512
+  gfr_lambda_relation: 0.05
+  gfr_role_prior_weight: 0.2
+  gfr_role_goal_weight: 0.45
+  gfr_role_context_weight: 0.2
+  gfr_role_ppmi_weight: 0.15
+  gfr_relation_role_residual_weight: 0.0
+  gfr_lambda_role_diversity: 0.0
+  gfr_lambda_role_semantic: 0.0
+  gfr_main_error_weight_floor: 0.1
+Youshu:
+  data_path: ./datasets
+  batch_size_train: 2048
+  batch_size_test: 2048
+  topk:
+  - 10
+  - 20
+  - 40
+  - 80
+  neg_num: 1
+  aug_type: Noise
+  ed_interval: 1
+  embedding_sizes:
+  - 128
+  num_layerss:
+  - 2
+  UB_ratios:
+  - 0.2
+  UI_ratios:
+  - 0.1
+  BI_ratios:
+  - 0.1
+  fusion_weights:
+    modal_weight:
+    - 0.35
+    - 0.15
+    - 0.5
+    UB_layer:
+    - 0.7
+    - 0.2
+    - 0.1
+    UI_layer:
+    - 0.6
+    - 0.2
+    - 0.2
+    BI_layer:
+    - 0.6
+    - 0.1
+    - 0.3
+  lrs:
+  - 0.001
+  l2_regs:
+  - 1.0e-05
+  c_lambdas:
+  - 0.04
+  c_temps:
+  - 0.23
+  epochs: 300
+  test_interval: 5
+  gfr_num_facets: 4
+  gfr_facet_dim: 64
+  gfr_history_tau: 0.5
+  gfr_match_tau: 0.5
+  gfr_pcl_tau: 0.2
+  gfr_pcl_label_smoothing: 0.05
+  gfr_lambda_pcl_item: 6.25e-05
+  gfr_lambda_pcl_bundle: 6.25e-05
+  gfr_lambda_pcl_user: 6.25e-05
+  gfr_lambda_orth_item: 6.25e-05
+  gfr_lambda_orth_bundle: 6.25e-05
+  gfr_lambda_orth_user: 6.25e-05
+  gfr_ppmi_topk: 20
+  gfr_ppmi_min_count: 2
+  gfr_anchor_seed: 12345
+  gfr_role_tau: 0.5
+  gfr_type_tau: 0.25
+  gfr_ppmi_enrich_weight: 0.1
+  gfr_ppmi_enrich_tau: 0.5
+  gfr_relation_dim: 64
+  gfr_relation_bank_size: 65536
+  gfr_relation_batch_size: 2048
+  gfr_relation_bank_seed: 314159
+  gfr_lambda_residual: 0.1
+  gfr_residual_scale_init: 0.1
+  gfr_residual_scale_max: 0.5
+  gfr_struct_hard_k: 0
+  gfr_eval_bundle_chunk: 512
+  gfr_lambda_relation: 0.05
+  gfr_role_prior_weight: 0.2
+  gfr_role_goal_weight: 0.45
+  gfr_role_context_weight: 0.2
+  gfr_role_ppmi_weight: 0.15
+  gfr_relation_role_residual_weight: 0.0
+  gfr_lambda_role_diversity: 0.0
+  gfr_lambda_role_semantic: 0.0
