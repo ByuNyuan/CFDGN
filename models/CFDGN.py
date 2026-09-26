@@ -12,8 +12,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-# The unchanged MultiCBR backbone implementation is inlined below so this
-# module is self-contained.
+
 
 
 def cal_bpr_loss(pred):
