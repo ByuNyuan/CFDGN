@@ -21,9 +21,7 @@ from utility import Datasets
 from models.CFDGN import CFDGN, MultiCBR
 
 
-# Keep the public command identical to the user's original MultiCBR usage:
-# no seed CLI is required.  The repository's historical official trainer used
-# default seed=2024, so CFDGN must reproduce that protocol internally.
+
 PROTOCOL_SEED = 2024
 
 
