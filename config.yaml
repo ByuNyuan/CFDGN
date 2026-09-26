@@ -1,7 +1,4 @@
-# CFDGN UNIFIED-FINAL-SCORE config.
-# Dataset-specific MultiCBR backbone settings and established PCL/Orth weights are preserved.
-# New CFDGN semantic-identifiability constants are common across all datasets.
-# No dataset-specific structural architecture branch is introduced.
+
 NetEase:
   data_path: ./datasets
   batch_size_train: 2048
