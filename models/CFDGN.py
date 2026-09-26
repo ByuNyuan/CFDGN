@@ -1,48 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""CFDGN Youshu QUERY-VALUE MULTI-INTEREST + DECOUPLED SCALE-INVARIANT CORRECTION.
 
-Core contract
--------------
-1) MultiCBR remains the collaborative Main backbone and is optimized only by
-   its official BPR + CL objective.
-2) Every CFDGN objective receives detached Main-side evidence; no
-   CFDGN loss can update the MultiCBR backbone or alter its RNG trajectory.
-3) Context-dependent roles use item facet activation, strict B\\{i} contextual
-   specialization and strict-local TRAIN-derived PPMI evidence.
-4) PPMI, fixed-anchor PCL and within-entity Orth remain mandatory structural
-   constraints; relation compatibility C is independent from role diversity D.
-5) Similar / Complementary / Noise remain interpretable *soft structural
-   states* derived from D/C/S.  No co-user percentile is treated as a latent-role
-   probability label; the previous role-affinity pseudo target is diagnostic only.
-6) Structural relevance has four explicit non-zero paths: multi-interest facet
-   match, emergent-bundle match, type-preference match and role-composition
-   match.  There is no unrestricted scorer MLP.
-7) Structural representation learning and deployment calibration are
-   separate gradient paths.  Raw structure learns discrimination only from the
-   official repository positive/random-negative pair, while the calibration
-   trust region updates only the bounded global alpha.  A strong Main model
-   therefore cannot collapse the structural representations to a constant.
-8) Deployment is dimensionally scale invariant:
-
-       s_final(u,b) = s_main(u,b) + alpha * sigma_Main * r_raw(u,b)
-
-   where r_raw in [-1,1], alpha is dimensionless, and sigma_Main is the
-   detached RMS within-user full-catalog Main-score standard deviation from
-   the current non-augmented TRAIN graph.  Main evidence is detached, so the
-   backbone remains exactly the official MultiCBR optimization trajectory.
-9) Training and deployment use the same calibrated additive score.  There is
-   no Top-M rerank interface, candidate-set z-score or validation lambda grid.
-10) Validation selects the complete CFDGN Final model jointly on
-   R/NDCG@20 and @40; Test is touched exactly once after checkpoint freeze.
-
-This V5 keeps the scale-invariant deployment fix that removed NetEase's
-over-correction, but fixes the V4 silent degeneration in which the same
-Main-preserving objective also backpropagated into raw Structural representations,
-driving alpha toward zero and repo_struct_win toward random.  V5 keeps raw
-Structural ranking alive with the configured TRAIN-only error-weight floor and
-lets the calibration trust region update alpha without erasing structural semantics.
-"""
 from __future__ import annotations
 
 import math
